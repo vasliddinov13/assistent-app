@@ -1,0 +1,78 @@
+.dashboart-wrapper{
+    display: flex;
+}
+
+.sidebar{
+    width: 320px;
+    height: 100vh;
+    overflow: auto;
+    background-color: #181818;
+    padding: 20px;
+    padding-top: 0;
+}
+
+.sidebar::-webkit-scrollbar{
+    display: none;
+}
+
+.sidebar-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    position: sticky;
+    top: 0;
+    background-color: #181818;
+}
+
+.sidebar-header .logo{
+    font-size: 24px;
+    font-weight: 600;
+    color: #fff;
+}
+
+.sidebar-btn{
+    width: 26px;
+    height: 26px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    outline: none;
+    background-color: #37373D;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.sidebar-btn:hover{
+    box-shadow: 0 0 5px rgba(132, 132, 145, 0.3);
+}
+
+.prompts{
+    margin-bottom: 20px;
+}
+
+.prompts h4{
+    font-size: 14px;
+    font-weight: 400;
+    color: #ccc;
+    margin-bottom: 10px;
+}
+
+.prompts nav{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.prompts nav a{
+    font-size: 16px;
+    color: #fff;
+    padding: 5px;
+    border-radius: 3px;
+}
+
+.prompts nav a:hover{
+    background-color: #37373D;
+}
