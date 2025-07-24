@@ -1,9 +1,9 @@
 import React from 'react'
 import { Outlet } from 'react-router-dom'
-import Sidebar from './dashboart/Sidebar'
-import Navbar from './dashboart/Navbar'
+import Sidebar from './dashboard/Sidebar'
+import Navbar from './dashboard/Navbar'
 
-function Dashboart() {
+function Dashboard() {
   const promptHistory = [
     {
       id: 1,
@@ -59,4 +59,4 @@ function Dashboart() {
   )
 }
 
-export default Dashboart
+export default Dashboard

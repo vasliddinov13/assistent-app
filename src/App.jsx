@@ -1,9 +1,9 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
 import Home from './components/pages/Home';
-import Dashboart from './components/Dashboart';
-import Create from './components/dashboart/Create';
-import View from './components/dashboart/View';
+import Dashboard from './components/Dashboard';
+import Create from './components/dashboard/Create';
+import View from './components/dashboard/View';
 
 function App() {
   return (
@@ -11,9 +11,8 @@ function App() {
       <Routes>
         <Route path='/' element={<Home/>}/>
 
-        <Route path='/dashboart' element={<Dashboart/>}>
-          <Route path='create' element={<Create/>}/>
-          <Route path='view' element={<View/>}/>
+        <Route path='/dashboard' element={<Dashboard/>}>
+          <Route path='' element={<Create/>}/>
         </Route>
       </Routes>
 

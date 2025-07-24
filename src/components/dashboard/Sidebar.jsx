@@ -16,7 +16,7 @@ function Sidebar({ promptHistory }) {
           promptHistory.map((item) => <div key={item.id} className='prompts'>
             <h4>{item.date}</h4>
             <nav>
-              {item.urls.map((url) => <Link to={url.url}>{url.title}</Link>)}
+              {item.urls.map((url) => <Link to={url.url} key={url.id}>{url.title}</Link>)}
             </nav>
           </div>)
         }

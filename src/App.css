@@ -2,13 +2,17 @@
     display: flex;
 }
 
+/*-------------------- sidebar css --------------------*/
+
 .sidebar{
     width: 320px;
     height: 100vh;
+    flex-shrink: 0;
     overflow: auto;
     background-color: #181818;
     padding: 20px;
     padding-top: 0;
+    border-right: 1px solid #2B2B2B;
 }
 
 .sidebar::-webkit-scrollbar{
@@ -75,4 +79,141 @@
 
 .prompts nav a:hover{
     background-color: #37373D;
+}
+
+/*-------------------- navbar css --------------------*/
+
+.dashboart-main{
+    width: 100%;
+    height: 100vh;
+    overflow: auto;
+}
+
+.navbar{
+    padding: 20px;
+    background-color: #181818;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    border-bottom: 1px solid #2B2B2B;
+    position: sticky;
+    top: 0;
+}
+
+.navbar h1{
+    color: #fff;
+}
+
+.navbar .dropdown-btn{
+    font-size: 14px;
+    padding: 7px 14px;
+    color: #fff;
+    border: 1px solid;
+    outline: none;
+    border-radius: 3px;
+    background-color: transparent;
+}
+
+.navbar .dropdown-menu{
+    position: absolute;
+    top: 80%;
+    right: 20px;
+    width: 200px;
+    flex-direction: column;
+    background-color: #181818;
+    box-shadow: 0 0 5px rgba(132, 132, 145, 0.3);
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.navbar .dropdown-menu a{
+    font-size: 14px;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 3px;
+}
+
+.navbar .dropdown-menu a:hover{
+    background-color: #2B2B2B;
+}
+
+/*-------------------- cerate css --------------------*/
+.create-container{
+    padding: 50px;
+}
+
+.create-container h2{
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.create-container label{
+    display: block;
+    font-size: 22px;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.create-container input,
+.create-container textarea{
+    width: 100%;
+    height: 38px;
+    border-radius: 5px;
+    border: 2px solid #aaa;
+    font-size: 16px;
+    color: #ccc;
+    outline: none;
+    background-color: transparent;
+    margin-bottom: 15px;
+    padding: 10px;
+}
+
+.create-container input:focus,
+.create-container textarea:focus{
+    border-color: #fff;
+}
+
+.create-container textarea{
+    height: 130px;
+    resize: vertical;
+}
+
+.create-container button{
+    font-size: 18px;
+    padding: 10px 20px;
+    background-color: #fff;
+    color: #181818;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+/*-------------------- view css --------------------*/
+
+.content-wrapper{
+    margin-top: 30px;
+    color: #fff;
+}
+
+.content-wrapper ul,
+.content-wrapper ol{
+    padding-left: 20px;
+}
+
+.content-wrapper h1{
+    margin-bottom: 20px;
+}
+
+.content-wrapper p{
+    margin-bottom: 25px;
+}
+
+.content-wrapper pre{
+    background-color: #37373D;
+    padding: 15px;
+    border-radius: 7px;
+    font-size: 15px;
+    margin-bottom: 10px;
 }
