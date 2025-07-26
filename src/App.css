@@ -1,10 +1,54 @@
-.dashboart-wrapper{
+.dashboart-wrapper {
     display: flex;
+}
+
+.create-container button .btn-loader,
+.sidebar-btn .btn-loader {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 5px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+}
+
+.create-container button.loading .btn-loader,
+.sidebar-btn.loading .btn-loader {
+    display: flex;
+}
+
+.btn-loader svg {
+    animation: rotate 1s linear infinite;
+    fill: #181818;
+}
+
+.sidebar-btn .btn-loader svg{
+    width: 20px;
+    height: 20px;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+
+    /* 100%{
+        transform:  rotate(0);
+    } */
 }
 
 /*-------------------- sidebar css --------------------*/
 
-.sidebar{
+.sidebar {
     width: 320px;
     height: 100vh;
     flex-shrink: 0;
@@ -15,11 +59,11 @@
     border-right: 1px solid #2B2B2B;
 }
 
-.sidebar::-webkit-scrollbar{
+.sidebar::-webkit-scrollbar {
     display: none;
 }
 
-.sidebar-header{
+.sidebar-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -29,13 +73,13 @@
     background-color: #181818;
 }
 
-.sidebar-header .logo{
+.sidebar-header .logo {
     font-size: 24px;
     font-weight: 600;
     color: #fff;
 }
 
-.sidebar-btn{
+.sidebar-btn {
     width: 26px;
     height: 26px;
     display: flex;
@@ -47,49 +91,50 @@
     color: #fff;
     cursor: pointer;
     border-radius: 3px;
+    position: relative;
 }
 
-.sidebar-btn:hover{
+.sidebar-btn:hover {
     box-shadow: 0 0 5px rgba(132, 132, 145, 0.3);
 }
 
-.prompts{
+.prompts {
     margin-bottom: 20px;
 }
 
-.prompts h4{
+.prompts h4 {
     font-size: 14px;
     font-weight: 400;
     color: #ccc;
     margin-bottom: 10px;
 }
 
-.prompts nav{
+.prompts nav {
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
 
-.prompts nav a{
+.prompts nav a {
     font-size: 16px;
     color: #fff;
     padding: 5px;
     border-radius: 3px;
 }
 
-.prompts nav a:hover{
+.prompts nav a:hover {
     background-color: #37373D;
 }
 
 /*-------------------- navbar css --------------------*/
 
-.dashboart-main{
+.dashboart-main {
     width: 100%;
     height: 100vh;
     overflow: auto;
 }
 
-.navbar{
+.navbar {
     padding: 20px;
     background-color: #181818;
     display: flex;
@@ -101,11 +146,11 @@
     top: 0;
 }
 
-.navbar h1{
+.navbar h1 {
     color: #fff;
 }
 
-.navbar .dropdown-btn{
+.navbar .dropdown-btn {
     font-size: 14px;
     padding: 7px 14px;
     color: #fff;
@@ -115,7 +160,7 @@
     background-color: transparent;
 }
 
-.navbar .dropdown-menu{
+.navbar .dropdown-menu {
     position: absolute;
     top: 80%;
     right: 20px;
@@ -127,28 +172,28 @@
     border-radius: 5px;
 }
 
-.navbar .dropdown-menu a{
+.navbar .dropdown-menu a {
     font-size: 14px;
     color: #fff;
     padding: 5px 10px;
     border-radius: 3px;
 }
 
-.navbar .dropdown-menu a:hover{
+.navbar .dropdown-menu a:hover {
     background-color: #2B2B2B;
 }
 
 /*-------------------- cerate css --------------------*/
-.create-container{
+.create-container {
     padding: 50px;
 }
 
-.create-container h2{
+.create-container h2 {
     color: #fff;
     margin-bottom: 20px;
 }
 
-.create-container label{
+.create-container label {
     display: block;
     font-size: 22px;
     color: #fff;
@@ -156,7 +201,7 @@
 }
 
 .create-container input,
-.create-container textarea{
+.create-container textarea {
     width: 100%;
     height: 38px;
     border-radius: 5px;
@@ -170,16 +215,16 @@
 }
 
 .create-container input:focus,
-.create-container textarea:focus{
+.create-container textarea:focus {
     border-color: #fff;
 }
 
-.create-container textarea{
+.create-container textarea {
     height: 130px;
     resize: vertical;
 }
 
-.create-container button{
+.create-container button {
     font-size: 18px;
     padding: 10px 20px;
     background-color: #fff;
@@ -188,29 +233,30 @@
     border: none;
     outline: none;
     cursor: pointer;
+    position: relative;
 }
 
 /*-------------------- view css --------------------*/
 
-.content-wrapper{
+.content-wrapper {
     margin-top: 30px;
     color: #fff;
 }
 
 .content-wrapper ul,
-.content-wrapper ol{
+.content-wrapper ol {
     padding-left: 20px;
 }
 
-.content-wrapper h1{
+.content-wrapper h1 {
     margin-bottom: 20px;
 }
 
-.content-wrapper p{
+.content-wrapper p {
     margin-bottom: 25px;
 }
 
-.content-wrapper pre{
+.content-wrapper pre {
     background-color: #37373D;
     padding: 15px;
     border-radius: 7px;

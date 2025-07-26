@@ -1,11 +1,11 @@
 import OpenAI from "openai";
 
-async function getResponse(title, description) {
+async function getResponse(title, description,setLoading) {
     const client = new OpenAI({
         apiKey: process.env.REACT_APP_OPENAI_KEY, // This is the default and can be omitted
         dangerouslyAllowBrowser: true
     });
-
+    setLoading(true);
     const response = await client.responses.create({
         model: 'gpt-4o',
         instructions: 'Your are the helpful assistant designed to assist users in creating engaging content, such as blogs, articles, or any written material.',

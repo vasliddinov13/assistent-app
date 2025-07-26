@@ -1,14 +1,20 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
-import { FaChevronRight } from "react-icons/fa6";
+import { FaPenToSquare } from "react-icons/fa6";
+import { appContext } from '../../context/appContext';
+import { LiaSpinnerSolid } from "react-icons/lia";
 
 function Sidebar({ promptHistory }) {
+  const [loading, setLoading] = useContext(appContext);
   return (
     <div className='sidebar'>
       <div className="sidebar-header">
         <Link to={'/dashboart'} className='logo'>Logo</Link>
-        <button className='sidebar-btn'>
-          <FaChevronRight />
+        <button className={`sidebar-btn ${loading ? "loading" : ""}`}>
+          <FaPenToSquare />
+          <span className='btn-loader'>
+            <LiaSpinnerSolid />
+          </span>
         </button>
       </div>
       <div className="sidebar-body">
