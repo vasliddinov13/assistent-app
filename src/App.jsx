@@ -4,19 +4,23 @@ import Home from './components/pages/Home';
 import Dashboard from './components/Dashboard';
 import Create from './components/dashboard/Create';
 import View from './components/dashboard/View';
+import { Toaster } from 'react-hot-toast';
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path='/' element={<Home/>}/>
+    <>
+      <Toaster />
+      <BrowserRouter>
+        <Routes>
+          <Route path='/' element={<Home />} />
 
-        <Route path='/dashboard' element={<Dashboard/>}>
-          <Route path='' element={<Create/>}/>
-        </Route>
-      </Routes>
+          <Route path='/dashboard' element={<Dashboard />}>
+            <Route path='' element={<Create />} />
+          </Route>
+        </Routes>
 
-    </BrowserRouter>
+      </BrowserRouter>
+    </>
   );
 }
 
