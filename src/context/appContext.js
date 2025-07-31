@@ -4,7 +4,8 @@ export const appContext = createContext(null);
 
 function AppContextProvider({children}){
     const [loading,setLoading] = useState(false);
-    return <appContext.Provider value={[loading,setLoading]}>
+    const [isOpen,setIsOpen] = useState(false);
+    return <appContext.Provider value={{loading,setLoading,isOpen,setIsOpen}}>
         {children}
     </appContext.Provider>
 }

@@ -8,7 +8,7 @@ import { useForm } from 'react-hook-form';
 
 function Create() {
   const [content, setContent] = useState("");
-  const [loading, setLoading] = useContext(appContext);
+  const {loading, setLoading} = useContext(appContext);
   const {
     register,
     formState: { errors },

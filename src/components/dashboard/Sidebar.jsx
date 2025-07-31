@@ -5,9 +5,9 @@ import { appContext } from '../../context/appContext';
 import { LiaSpinnerSolid } from "react-icons/lia";
 
 function Sidebar({ promptHistory }) {
-  const [loading, setLoading] = useContext(appContext);
+  const {loading, setLoading,isOpen} = useContext(appContext);
   return (
-    <div className='sidebar'>
+    <div className={`sidebar ${isOpen ? "open" : ""}`}>
       <div className="sidebar-header">
         <Link to={'/dashboart'} className='logo'>Logo</Link>
         <button className={`sidebar-btn ${loading ? "loading" : ""}`}>
