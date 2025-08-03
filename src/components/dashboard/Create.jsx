@@ -1,31 +1,18 @@
 import React, { useContext, useState } from 'react'
-import getResponse from './getResponse'
 import View from './View';
 import { LiaSpinnerSolid } from "react-icons/lia";
-import { appContext } from '../../context/appContext';
-import toast from 'react-hot-toast';
 import { useForm } from 'react-hook-form';
+import { contentContext } from '../../context/contentContext';
 
 function Create() {
-  const [content, setContent] = useState("");
-  const {loading, setLoading} = useContext(appContext);
+  const {loading, setLoading,content,createRequest} = useContext(contentContext);
   const {
     register,
     formState: { errors },
     handleSubmit,
   } = useForm();
 
-  async function createRequest(data) {
-    if (loading) return;
-    try {
-      const result = await getResponse(data.title, data.desc, setLoading);
-      setContent(result);
-    } catch (err) {
-      toast.error("Maqola yaratishda xatolik yuz berdi. Qayta urining.");
-    } finally {
-      setLoading(false);
-    }
-  }
+  
   return (
     <div className="create-container">
       <h2>Article Writer Assistent</h2>
