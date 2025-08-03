@@ -5,7 +5,7 @@ import { useForm } from 'react-hook-form';
 import { contentContext } from '../../context/contentContext';
 
 function Create() {
-  const {loading, setLoading,content,createRequest} = useContext(contentContext);
+  const {loading, setLoading,createRequest} = useContext(contentContext);
   const {
     register,
     formState: { errors },
@@ -16,8 +16,6 @@ function Create() {
   return (
     <div className="create-container">
       <h2>Article Writer Assistent</h2>
-      {content ?
-        <View content={content} /> :
         <form onSubmit={handleSubmit(createRequest)}>
           <div className='input-box'>
             <label htmlFor="title">Title</label>
@@ -44,7 +42,6 @@ function Create() {
             </span>
           </button>
         </form>
-      }
     </div>
   )
 }

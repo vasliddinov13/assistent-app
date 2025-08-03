@@ -3,32 +3,27 @@ import getResponse from "../components/dashboard/getResponse";
 import toast from "react-hot-toast";
 import { useLocalStorage } from "react-use";
 import dayjs from "dayjs";
+import { useNavigate } from "react-router-dom";
 
 export const contentContext = createContext(null);
 
 function ContentContextProvider({ children }) {
     const [loading, setLoading] = useState(false);
-    const [content, setContent] = useState(null);
     const [strVal, setStrVal] = useLocalStorage("content", []);
+    const navigate = useNavigate();
     async function createRequest(data) {
         if (loading) return;
         try {
             const result = await getResponse(data.title, data.desc, setLoading);
-            setContent(result);
-            // localStorage.setItem("content", JSON.stringify(
-            //     [{
-            //         id: 10,
-            //         createdAt: Date.now(),
-            //         content: result
-            //     }]
-            // ));
-            setStrVal([{
+            const content = {
                 id: Date.now(),
                 createdAt: Date.now(),
                 content: result,
                 title: data.title,
                 description: data.desc
-            }, ...strVal]);
+            };
+            setStrVal([content, ...strVal]);
+            navigate(`/dashboard/content/${content.id}`);
         } catch (err) {
             toast.error("Maqola yaratishda xatolik yuz berdi. Qayta urining.");
         } finally {
@@ -52,7 +47,7 @@ function ContentContextProvider({ children }) {
         }
     });
     promptHistory.sort((a,b) => dayjs(b.date).diff(dayjs(a.date)));
-    return <contentContext.Provider value={{ loading, setLoading, content, createRequest, promptHistory }}>
+    return <contentContext.Provider value={{ loading, setLoading, createRequest, promptHistory }}>
         {children}
     </contentContext.Provider>
 }

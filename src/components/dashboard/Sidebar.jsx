@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { FaPenToSquare } from "react-icons/fa6";
 import { appContext } from '../../context/appContext';
 import { LiaSpinnerSolid } from "react-icons/lia";
@@ -8,12 +8,15 @@ import { contentContext } from '../../context/contentContext';
 function Sidebar() {
   const {setLoading,isOpen} = useContext(appContext);
   const {loading,promptHistory} = useContext(contentContext);
-  console.log(promptHistory);
+  const navigate = useNavigate();
+  function handleClick(){
+    navigate("/dashboard");
+  }
   return (
     <div className={`sidebar ${isOpen ? "open" : ""}`}>
       <div className="sidebar-header">
         <Link to={'/dashboart'} className='logo'>Logo</Link>
-        <button className={`sidebar-btn ${loading ? "loading" : ""}`}>
+        <button className={`sidebar-btn ${loading ? "loading" : ""}`} onClick={handleClick}>
           <FaPenToSquare />
           <span className='btn-loader'>
             <LiaSpinnerSolid />
