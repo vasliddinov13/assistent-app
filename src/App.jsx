@@ -6,6 +6,7 @@ import Create from './components/dashboard/Create';
 import View from './components/dashboard/View';
 import { Toaster } from 'react-hot-toast';
 import Content from './components/dashboard/Content';
+import Share from './components/pages/Share';
 
 function App() {
   return (
@@ -19,6 +20,8 @@ function App() {
             <Route path='' element={<Create />} />
             <Route path='content/:id' element={<Content />} />
           </Route>
+
+          <Route path='/share/:id' element={<Share/>}/>
         </Routes>
     </>
   );
